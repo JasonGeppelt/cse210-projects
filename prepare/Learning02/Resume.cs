@@ -1,5 +1,8 @@
 public class Resume
 {
+    public Resume()
+    {
+    }
     public string _name;
     public List<Job> _jobList = new List<Job>();
     public void DisplayResume()

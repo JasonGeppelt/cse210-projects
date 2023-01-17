@@ -2,6 +2,9 @@ using System;
 
 public class Job
 {
+    public Job()
+    {
+    }
     public string _jobTitle;
     public string _company;
     public int _startYear;
