@@ -2,7 +2,10 @@ using System;
 
 class Entry
 {
-    public string dateAndTime;
-    public string body;
-    
+    public string _dateAndTime;
+    public string _body;
+    public DateTime GetDateTime()
+    {
+        return DateTime.Now;
+    }
 }

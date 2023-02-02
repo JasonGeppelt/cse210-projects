@@ -4,6 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop03 World!");
+        System.Console.WriteLine("Welcome to the Scripture Memorizer");
+        string response;
+        do
+        {
+            System.Console.Write("Press enter to continue or type 'quit' to quit. ");
+            response = System.Console.ReadLine();
+        }
+        while (response != "quit");
     }
 }
