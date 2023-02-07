@@ -1,6 +1,23 @@
 using System;
 
-public class Scripture
+class Scripture
 {
-    
+    private List<Verse> _verses = new List<Verse>();
+
+    public Scripture(List<string> verses)
+    {
+        foreach (string verseStr in verses)
+        {
+            Verse verse = new Verse(verseStr);
+            _verses.Add(verse);
+        }
+    }
+
+    public void Display()
+    {
+        foreach (Verse v in _verses)
+        {
+            v.Display();
+        }
+    }
 }

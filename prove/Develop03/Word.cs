@@ -2,10 +2,25 @@ using System;
 
 public class Word
 {
-    Word()
-    {
-    }
-    string _text;
-    bool _hidden;  
+    private string _text;
+    private bool _hidden;  
     
+    public Word(string text)
+    {
+        _text = text;
+    }
+
+    public void Display()
+    {
+        if (_hidden)
+        {
+            foreach (char c in _text)
+            {
+                System.Console.Write("_");
+            }
+        } else
+        {
+            System.Console.Write(_text);
+        }
+    }
 }
