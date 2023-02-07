@@ -3,7 +3,9 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {
+    {   
+        Entry entry = new Entry();
+        Journal journal = new Journal();
         System.Console.WriteLine("Welcome to the Journal Program!");
 
         char selection;
@@ -22,19 +24,19 @@ class Program
             switch(selection) 
             {
                 case '1':
-                    // code block
+                    journal._body += entry.Prompt(journal._body);
                     break;
 
                 case '2':
-                    // code block
+                    journal.Display();
                     break;
 
                 case '3':
-                    System.Console.WriteLine("you chose 3.");
+                    journal.Load();
                     break;
 
                 case '4':
-                    // code block
+                    journal.Save();
                     break;
 
                 case '5':
