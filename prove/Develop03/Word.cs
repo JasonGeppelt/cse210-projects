@@ -3,7 +3,7 @@ using System;
 public class Word
 {
     private string _text;
-    private bool _hidden;  
+    public bool _hidden;
     
     public Word(string text)
     {
@@ -22,5 +22,11 @@ public class Word
         {
             System.Console.Write(_text);
         }
+    }
+
+    public void RandomBlank()
+    {
+        _hidden = true;
+        // System.Console.WriteLine("'" + _text + "' is now hidden");
     }
 }
