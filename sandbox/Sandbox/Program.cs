@@ -1,91 +1,72 @@
 using System;
 
-// Shopping Cart Program
-
-        /*
-        1) Add Item
-        2) Display
-        3) Total
-        4) Remove
-        5) Quit
-        */
-
-
-class Program
+class AdventureGame
 {
     static void Main(string[] args)
-    {   
-        // Data
-        List<string> items = new List<string>();
-        List<float> prices = new List<float>();
+    {
+        Console.WriteLine("Welcome to the Adventure Game!");
+        Console.WriteLine("You find yourself standing at a fork in the road.");
 
-        bool done = false;
-        while (!done)
+        while (true)
         {
-            DisplayMenu();
-            int choice = GetChoice();
-            if (choice == 1)
+            Console.WriteLine("Which path will you choose? (1 or 2)");
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
             {
-                AddItem(items, prices);
+                Console.WriteLine("You head down the path to the left and come across a small stream.");
+                Console.WriteLine("Do you want to follow the stream upstream or downstream? (U/D)");
+                string direction = Console.ReadLine();
+
+                if (direction.ToUpper() == "U")
+                {
+                    Console.WriteLine("You follow the stream upstream and find a hidden cave.");
+                    Console.WriteLine("Inside the cave, you discover a treasure chest filled with gold!");
+                    Console.WriteLine("Congratulations, you win!");
+                    break;
+                }
+                else if (direction.ToUpper() == "D")
+                {
+                    Console.WriteLine("You follow the stream downstream and get lost in the woods.");
+                    Console.WriteLine("Sorry, you lose.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input, please try again.");
+                }
             }
-            if (choice == 2)
+            else if (choice == "2")
             {
-                Display(items, prices);
+                Console.WriteLine("You head down the path to the right and come across a rope bridge.");
+                Console.WriteLine("Do you want to cross the bridge or turn back? (C/T)");
+                string action = Console.ReadLine();
+
+                if (action.ToUpper() == "C")
+                {
+                    Console.WriteLine("You cross the rope bridge and find a treasure map!");
+                    Console.WriteLine("The map leads you to a hidden cave filled with gold.");
+                    Console.WriteLine("Congratulations, you win!");
+                    break;
+                }
+                else if (action.ToUpper() == "T")
+                {
+                    Console.WriteLine("You turn back and get lost in the woods.");
+                    Console.WriteLine("Sorry, you lose.");
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input, please try again.");
+                }
             }
-            if (choice == 3)
+            else
             {
-                Display(items, prices);
-            }
-            if (choice == 4)
-            {
-                Display(items, prices);
-            }
-            if (choice == 5)
-            {
-                System.Console.WriteLine("Thank you, goodbye.");
-                done = true;
+                Console.WriteLine("Invalid input, please try again.");
             }
         }
-    }
 
-     static void DisplayMenu()
-    {
-        System.Console.WriteLine("\n1) Add Item");
-        System.Console.WriteLine("2) Display");
-        System.Console.WriteLine("3) Total");
-        System.Console.WriteLine("4) Remove");
-        System.Console.WriteLine("5) Quit\n");
-    }
-    static int GetChoice()
-    {
-        System.Console.WriteLine("Enter Choice: ");
-        return int.Parse(Console.ReadLine());
-    }
-    static void AddItem(List<string> items, List<float> prices)
-    {
-        System.Console.Write("Enter item: ");
-        string item = Console.ReadLine();
-
-        System.Console.Write("Enter price: ");
-        float price = float.Parse(Console.ReadLine());
-
-        items.Add(item);
-        prices.Add(price);
-    }
-    static void Display(List<string> items, List<float> prices)
-    {
-        System.Console.WriteLine("DISPLAY ITEMS");
-        for (int i = 0; i < items.Count; i++)
-        {
-            System.Console.WriteLine($"{items[i]}: ${prices[i]}");
-        }
-    }
-    static void Total(List<string> items, List<float> prices)
-    {
-        System.Console.WriteLine("TOTAL");
-    }
-    static void Remove(List<string> items, List<float> prices)
-    {
-        System.Console.WriteLine("REMOVE");
+        Console.WriteLine("Thanks for playing the Adventure Game! Press any key to exit.");
+        Console.ReadKey();
     }
 }
