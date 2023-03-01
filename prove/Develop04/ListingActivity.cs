@@ -42,8 +42,6 @@ class ListingActivity : Activity
             count++;
         }
 
-        return count;
-        
-        Console.WriteLine();
+        return count;        
     }
 }
