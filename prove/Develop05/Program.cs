@@ -4,8 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Goals goals = Goals.LoadFromFile("goals.bin");
-
         while (true)
         {
             Console.WriteLine("What do you want to do?");
@@ -25,58 +23,28 @@ class Program
                 switch (choice)
                 {
                     case 1:
-                        Console.Write("Enter goal name: ");
-                        string simpleName = Console.ReadLine();
-                        Console.Write("Enter goal value: ");
-                        if (int.TryParse(Console.ReadLine(), out int simpleValue))
-                        {
-                            goals.AddGoal(new SimpleGoal(simpleName, simpleValue));
-                        }
+                       
                         break;
                     case 2:
-                        Console.Write("Enter goal name: ");
-                        string eternalName = Console.ReadLine();
-                        Console.Write("Enter goal value: ");
-                        if (int.TryParse(Console.ReadLine(), out int eternalValue))
-                        {
-                            goals.AddGoal(new EternalGoal(eternalName, eternalValue));
-                        }
+                        
                         break;
                     case 3:
-                        Console.Write("Enter goal name: ");
-                        string checklistName = Console.ReadLine();
-                        Console.Write("Enter goal value: ");
-                        if (int.TryParse(Console.ReadLine(), out int checklistValue))
-                        {
-                            Console.Write("Enter checklist target: ");
-                            if (int.TryParse(Console.ReadLine(), out int checklistTarget))
-                            {
-                                goals.AddGoal(new Checklist(checklistName, checklistValue, checklistTarget));
-                            }
-                        }
+                        
                         break;
                     case 4:
-                        Console.Write("Enter goal index: ");
-                        if (int.TryParse(Console.ReadLine(), out int index))
-                        {
-                            goals.RecordEvent(index);
-                        }
+                        
                         break;
                     case 5:
-                        goals.DisplayGoals();
+                        
                         break;
                     case 6:
-                        Console.Write("Enter filename: ");
-                        string filename = Console.ReadLine();
-                        goals.SaveToFile(filename);
+                        
                         break;
                     case 7:
-                        Console.Write("Enter filename: ");
-                        string loadFilename = Console.ReadLine();
-                        goals = Goals.LoadFromFile(loadFilename);
+                        
                         break;
                     case 8:
-                        goals.SaveToFile("goals.bin");
+                        
                         return;
                     default:
                         Console.WriteLine("Invalid choice");
