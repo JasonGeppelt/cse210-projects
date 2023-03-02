@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.Clear();
         while (true)
         {
             Console.WriteLine("What do you want to do?");
@@ -22,27 +23,35 @@ class Program
             {
                 switch (choice)
                 {
+                    // Add a simple goal
                     case 1:
                        
                         break;
+                    // Add an eternal goal
                     case 2:
                         
                         break;
+                    // Add a checklist goal
                     case 3:
                         
                         break;
+                    // Record an event
                     case 4:
                         
                         break;
+                    // Display goals
                     case 5:
                         
                         break;
+                    // Save goals to file
                     case 6:
                         
                         break;
+                    // Load goals from file
                     case 7:
                         
                         break;
+                    // Quit
                     case 8:
                         
                         return;
