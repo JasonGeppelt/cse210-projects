@@ -3,6 +3,7 @@ public abstract class Goal
     private int _pointValue;
     private string _title;
     private string _description;
+    private string _type;
 
     public Goal(int pointValue, string title, string description)
     {
@@ -15,14 +16,38 @@ public abstract class Goal
     {
         _pointValue = pointValue;
     }
+    public int GetPointValue()
+    {
+        return _pointValue;
+    }
+
     public void SetTitle(string title)
     {
         _title = title;
     }
+    public string GetTitle()
+    {
+        return _title;
+    }
+
     public void SetDescription(string description)
     {
         _description = description;
     }
+    public string GetDescription()
+    {
+        return _description;
+    }
+
+    public void SetGoalType(string type)
+    {
+        _type = type;
+    }
+    public string GetGoalType()
+    {
+        return _type;
+    }
+
 
     public abstract bool IsCompleted();
     public abstract void Save();
