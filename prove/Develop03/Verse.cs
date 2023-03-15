@@ -47,7 +47,6 @@ class Verse
             if (!_words[number]._hidden)
             {
                 _words[number].RandomBlank();
-
             }
             else
             {

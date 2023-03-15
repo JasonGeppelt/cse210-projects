@@ -1,13 +1,46 @@
 class Checklist : Goal
 {
-    public Checklist(int pointValue, string title, string description) : base(pointValue, title, description)
+    private int _completedNum = 0;
+    private int _repetitionNum;
+    private int _bonusPointValue;
+
+    public int RepetitionNum
     {
-    
+        get { return _repetitionNum; }
+        set { _repetitionNum = value; }
+    }
+
+    public int BonusPointValue
+    {
+        get { return _bonusPointValue; }
+        set { _bonusPointValue = value; }
     }
     
-    public override bool IsCompleted()
+    public Checklist(int pointValue, string title, string description, int repetitionNum, int bonusPointValue) : base(pointValue, title, description)
     {
-        return false;
+        _repetitionNum = repetitionNum;
+        _bonusPointValue = bonusPointValue;
+    }
+
+    public override void Display()
+    {
+        string checkmark = " ";
+        if (IsComplete == true)
+        {
+            checkmark = "X";
+        }
+        System.Console.WriteLine($"[{checkmark}] {Title} | Point Value: {PointValue} | Bonus Point Value: {BonusPointValue} | Current progress: {_completedNum}/{_repetitionNum}");
+    }
+
+    public override int RecordEvent()
+    {
+        _completedNum ++;
+        if (_completedNum == _repetitionNum)
+        {
+            IsComplete = true;
+            return BonusPointValue;
+        }
+        return PointValue;
     }
 
     public override void Save()
