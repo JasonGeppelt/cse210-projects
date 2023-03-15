@@ -12,7 +12,11 @@ class SimpleGoal : Goal
         {
             checkmark = "X";
         }
+<<<<<<< HEAD
         System.Console.WriteLine($"[{checkmark}] {Title} | Point Value: {PointValue}");
+=======
+        System.Console.WriteLine($"{{{checkmark}}} {Title} | Point Value: {PointValue}");
+>>>>>>> 97732633f7348dfe9fe9a26b06c1d81bb1532df8
     }
 
     public override int RecordEvent()

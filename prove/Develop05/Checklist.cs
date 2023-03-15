@@ -29,7 +29,11 @@ class Checklist : Goal
         {
             checkmark = "X";
         }
+<<<<<<< HEAD
         System.Console.WriteLine($"[{checkmark}] {Title} | Point Value: {PointValue} | Bonus Point Value: {BonusPointValue} | Current progress: {_completedNum}/{_repetitionNum}");
+=======
+        System.Console.WriteLine($"{{{checkmark}}} {Title} | Point Value: {PointValue} | Bonus Point Value: {BonusPointValue} | Current progress: {_completedNum}/{_repetitionNum}");
+>>>>>>> 97732633f7348dfe9fe9a26b06c1d81bb1532df8
     }
 
     public override int RecordEvent()
