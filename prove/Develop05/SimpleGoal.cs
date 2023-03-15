@@ -4,10 +4,21 @@ class SimpleGoal : Goal
     {
     
     }
-    
-    public override bool IsCompleted()
+
+    public override void Display()
     {
-        return false;
+        string checkmark = " ";
+        if (IsComplete == true)
+        {
+            checkmark = "X";
+        }
+        System.Console.WriteLine($"{{{checkmark}}} {Title} | Point Value: {PointValue}");
+    }
+
+    public override int RecordEvent()
+    {
+        IsComplete = true;
+        return PointValue;
     }
 
     public override void Save()
