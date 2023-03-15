@@ -12,7 +12,7 @@ class EternalGoal : Goal
         {
             checkmark = "X";
         }
-        System.Console.WriteLine($"[{checkmark}] {Title} | Point Value: {PointValue}");
+        System.Console.WriteLine($"[{checkmark}] {Title} ({Description}) | Point Value: {PointValue}");
     }
 
     public override int RecordEvent()
@@ -22,11 +22,9 @@ class EternalGoal : Goal
 
     public override void Save()
     {
-        
-    }
-
-    public override void Load()
-    {
-      
+        using (StreamWriter writer = new StreamWriter("goals.txt", true))
+        {
+            writer.WriteLine($"{Type}|{PointValue}|{Title}|{Description}|{IsComplete}");
+        }
     }
 }

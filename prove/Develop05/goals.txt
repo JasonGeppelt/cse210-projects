@@ -1,0 +1,3 @@
+Simple Goal|100|My Simple Goal|Be awesome always.|False
+Eternal Goal|50|My Eternal Goal|Always be kind.|False
+Checklist|20|My Checklist|Be sweet 4 times.|False|4|300

@@ -110,12 +110,51 @@ class Program
 
                     // Save goals to file
                     case 6:
-                        
+                        Console.Clear();
+                        foreach (Goal goal in goals)
+                        {
+                            goal.Save();
+                        }
+                        System.Console.WriteLine("File saved.");
                         break;
 
                     // Load goals from file
                     case 7:
-                        
+                        Console.Clear();
+                        if (File.Exists("goals.txt"))
+                        {
+                            using (StreamReader reader = new StreamReader("goals.txt"))
+                            {
+                                string line;
+                                while ((line = reader.ReadLine()) != null)
+                                {
+
+                                    string[] values = line.Split('|');
+                                    if (values[0] == "Simple Goal")
+                                    {
+                                        SimpleGoal simpleGoal1 = new SimpleGoal(int.Parse(values[1]), values[2], values[3]);
+                                        simpleGoal1.Type = values[0];
+                                        simpleGoal1.IsComplete = bool.Parse(values[4]);
+                                        goals.Add(simpleGoal1);
+                                    }
+                                    else if (values[0] == "Eternal Goal")
+                                    {
+                                        EternalGoal eternalGoal1 = new EternalGoal(int.Parse(values[1]), values[2], values[3]);
+                                        eternalGoal1.Type = values[0];
+                                        eternalGoal1.IsComplete = bool.Parse(values[4]);
+                                        goals.Add(eternalGoal1);
+                                    }
+                                    else if (values[0] == "Checklist")
+                                    {
+                                        Checklist checklist1 = new Checklist(int.Parse(values[1]), values[2], values[3], int.Parse(values[5]), int.Parse(values[6]));
+                                        checklist1.Type = values[0];
+                                        checklist1.IsComplete = bool.Parse(values[4]);
+                                        goals.Add(checklist1);
+                                    }
+                                }
+                            }
+                        }
+                        System.Console.WriteLine("File loaded.");
                         break;
 
                     // Quit

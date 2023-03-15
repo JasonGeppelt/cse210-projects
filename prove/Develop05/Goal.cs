@@ -46,5 +46,4 @@ public abstract class Goal
     public abstract void Display();
     public abstract int RecordEvent();
     public abstract void Save();
-    public abstract void Load();
 }

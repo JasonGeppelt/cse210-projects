@@ -29,7 +29,7 @@ class Checklist : Goal
         {
             checkmark = "X";
         }
-        System.Console.WriteLine($"[{checkmark}] {Title} | Point Value: {PointValue} | Bonus Point Value: {BonusPointValue} | Current progress: {_completedNum}/{_repetitionNum}");
+        System.Console.WriteLine($"[{checkmark}] {Title} ({Description}) | Point Value: {PointValue} | Bonus Point Value: {BonusPointValue} | Current progress: {_completedNum}/{_repetitionNum}");
     }
 
     public override int RecordEvent()
@@ -45,11 +45,9 @@ class Checklist : Goal
 
     public override void Save()
     {
-        
-    }
-
-    public override void Load()
-    {
-      
+        using (StreamWriter writer = new StreamWriter("goals.txt", true))
+        {
+            writer.WriteLine($"{Type}|{PointValue}|{Title}|{Description}|{IsComplete}|{_repetitionNum}|{_bonusPointValue}");
+        }
     }
 }
